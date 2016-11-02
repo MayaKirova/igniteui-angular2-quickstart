@@ -1,5 +1,8 @@
 /* tslint:disable:no-unused-variable */
 import { AppComponent } from './app.component';
+import { NgModule }      from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { TestBed }      from '@angular/core/testing';
 
@@ -9,7 +12,7 @@ import { IgGridComponent, IgTextEditorComponent, IgDateEditorComponent,
       IgPercentEditorComponent, IgDatePickerComponent, IgComboComponent, IgTreeComponent, IgDialogComponent, IgDataChartComponent } from "igniteui-angular2";
 
 ////////  SPECS  /////////////
-
+export function main() {
 /// Delete this
 describe('Smoke test', () => {
   it('should run a passing test', () => {
@@ -19,7 +22,7 @@ describe('Smoke test', () => {
 
 describe('AppComponent with TCB', function () {
   beforeEach(() => {
-    TestBed.configureTestingModule({declarations: [ AppComponent, IgGridComponent, IgTextEditorComponent, IgDateEditorComponent, IgMaskEditorComponent, IgCurrencyEditorComponent, IgNumericEditorComponent,
+    TestBed.configureTestingModule({  imports: [ BrowserModule , FormsModule ],declarations: [ AppComponent, IgGridComponent, IgTextEditorComponent, IgDateEditorComponent, IgMaskEditorComponent, IgCurrencyEditorComponent, IgNumericEditorComponent,
   IgPercentEditorComponent, IgDatePickerComponent, IgComboComponent, IgTreeComponent, IgDialogComponent, IgDataChartComponent]});
   });
 
@@ -39,3 +42,4 @@ describe('AppComponent with TCB', function () {
     expect(h1.innerText).toMatch(/My IgniteUI Angular2 App/i, '<h1> should say something about "Angular App"');
   });
 });
+}
