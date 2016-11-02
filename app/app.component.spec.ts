@@ -7,9 +7,13 @@ import { FormsModule } from '@angular/forms';
 import { TestBed }      from '@angular/core/testing';
 
 import { By }           from '@angular/platform-browser';
-import { IgGridComponent, IgTextEditorComponent, IgDateEditorComponent,
-     IgMaskEditorComponent, IgCurrencyEditorComponent, IgNumericEditorComponent,
-      IgPercentEditorComponent, IgDatePickerComponent, IgComboComponent, IgTreeComponent, IgDialogComponent, IgDataChartComponent } from "igniteui-angular2";
+import { IgGridComponent, IgTextEditorComponent,
+     IgDateEditorComponent, IgMaskEditorComponent,
+      IgCurrencyEditorComponent, IgNumericEditorComponent,
+      IgPercentEditorComponent, IgDatePickerComponent,
+       IgComboComponent, IgTreeComponent,
+        IgDialogComponent, IgDataChartComponent }
+         from 'igniteui-angular2';
 
 ////////  SPECS  /////////////
 export function main() {
@@ -22,8 +26,15 @@ describe('Smoke test', () => {
 
 describe('AppComponent with TCB', function () {
   beforeEach(() => {
-    TestBed.configureTestingModule({  imports: [ BrowserModule , FormsModule ],declarations: [ AppComponent, IgGridComponent, IgTextEditorComponent, IgDateEditorComponent, IgMaskEditorComponent, IgCurrencyEditorComponent, IgNumericEditorComponent,
-  IgPercentEditorComponent, IgDatePickerComponent, IgComboComponent, IgTreeComponent, IgDialogComponent, IgDataChartComponent]});
+    TestBed.configureTestingModule({
+        imports: [ BrowserModule , FormsModule ],
+        declarations: [
+         AppComponent, IgGridComponent, IgTextEditorComponent,
+         IgDateEditorComponent, IgMaskEditorComponent,
+         IgCurrencyEditorComponent, IgNumericEditorComponent,
+         IgPercentEditorComponent, IgDatePickerComponent,
+         IgComboComponent, IgTreeComponent,
+         IgDialogComponent, IgDataChartComponent]});
   });
 
   it('should instantiate component', () => {
@@ -37,7 +48,7 @@ describe('AppComponent with TCB', function () {
 
     let h1 = fixture.debugElement.query(el => el.name === 'h1').nativeElement;  // it works
 
-        h1 = fixture.debugElement.query(By.css('h1')).nativeElement;            // preferred
+        h1 = fixture.debugElement.query(By.css('h1')).nativeElement; // preferred
 
     expect(h1.innerText).toMatch(/My IgniteUI Angular2 App/i, '<h1> should say something about "Angular App"');
   });

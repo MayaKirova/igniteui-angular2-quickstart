@@ -15,4 +15,5 @@ before_script:
 install:
   - npm install
 script:
+- npm run lint
   - npm run test-once
