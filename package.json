@@ -58,6 +58,8 @@
     "karma-chrome-launcher": "^0.2.2",
     "karma-jasmine": "^0.2.2",
     "karma-junit-reporter": "^0.4.2",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "karma-htmlfile-reporter": "^0.3.4",
     "karma-coverage": "",
     "karma-remap-istanbul": "",
     "protractor": "^4.0.9",
