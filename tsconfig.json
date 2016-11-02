@@ -19,6 +19,8 @@
     "node_modules/igniteui-angular2/igniteui.angular2.ts",
     "app/app.module.ts",
     "app/app.component.ts",
-    "app/main.ts"
+    "app/app.component.spec.ts",
+    "app/main.ts",
+    "e2e/app.e2e-spec.ts"
    ]
 }

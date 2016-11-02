@@ -4,6 +4,9 @@ import { AppComponent } from './app.component';
 import { TestBed }      from '@angular/core/testing';
 
 import { By }           from '@angular/platform-browser';
+import { IgGridComponent, IgTextEditorComponent, IgDateEditorComponent,
+     IgMaskEditorComponent, IgCurrencyEditorComponent, IgNumericEditorComponent,
+      IgPercentEditorComponent, IgDatePickerComponent, IgComboComponent, IgTreeComponent, IgDialogComponent, IgDataChartComponent } from "igniteui-angular2";
 
 ////////  SPECS  /////////////
 
@@ -16,7 +19,8 @@ describe('Smoke test', () => {
 
 describe('AppComponent with TCB', function () {
   beforeEach(() => {
-    TestBed.configureTestingModule({declarations: [AppComponent]});
+    TestBed.configureTestingModule({declarations: [ AppComponent, IgGridComponent, IgTextEditorComponent, IgDateEditorComponent, IgMaskEditorComponent, IgCurrencyEditorComponent, IgNumericEditorComponent,
+  IgPercentEditorComponent, IgDatePickerComponent, IgComboComponent, IgTreeComponent, IgDialogComponent, IgDataChartComponent]});
   });
 
   it('should instantiate component', () => {
@@ -32,6 +36,6 @@ describe('AppComponent with TCB', function () {
 
         h1 = fixture.debugElement.query(By.css('h1')).nativeElement;            // preferred
 
-    expect(h1.innerText).toMatch(/angular app/i, '<h1> should say something about "Angular App"');
+    expect(h1.innerText).toMatch(/My IgniteUI Angular2 App/i, '<h1> should say something about "Angular App"');
   });
 });
