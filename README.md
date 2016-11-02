@@ -1,16 +1,14 @@
-# Angular QuickStart Source
+# IgniteUI Angular2 QuickStart Source
 [![Build Status][travis-badge]][travis-badge-url]
 
-This repository holds the TypeScript source code of the [angular.io quickstart](https://angular.io/docs/ts/latest/quickstart.html),
-the foundation for most of the documentation samples and potentially a good starting point for your application.
+This repository holds the TypeScript source code of a basic samples using the [Ignite UI components for Angular 2](https://github.com/IgniteUI/igniteui-angular2).
+ It is potentially a good starting point for your application as it contains all the neccessary script configurations to get you started with exploring the IgniteUI Angular 2 components' capabilities.
 
-It's been extended with testing support so you can start writing tests immediately.
+It also includes testing support so you can start writing tests immediately.
 
 **This is not the perfect arrangement for your application. It is not designed for production.
 It exists primarily to get you started quickly with learning and prototyping in Angular**
 
-We are unlikely to accept suggestions about how to grow this QuickStart into something it is not.
-Please keep that in mind before posting issues and PRs.
 
 ## Prerequisites
 
@@ -29,15 +27,8 @@ We recommend [nvm](https://github.com/creationix/nvm) for managing multiple vers
 
 Clone this repo into new project folder (e.g., `my-proj`).
 ```bash
-git clone  https://github.com/angular/quickstart  my-proj
+git clone  https://github.com/IgniteUI/igniteui-angular2-quickstart  my-proj
 cd my-proj
-```
-
-We have no intention of updating the source on `angular/quickstart`.
-Discard everything "git-like" by deleting the `.git` folder.
-```bash
-rm -rf .git  # non-Windows
-rd .git /S/Q # windows
 ```
 
 ### Create a new git repo
@@ -95,7 +86,6 @@ Here are the test related scripts:
 
 ## Testing
 
-The QuickStart documentation doesn't discuss testing.
 This repo adds both karma/jasmine unit test and protractor end-to-end testing support.
 
 These tools are configured for specific conventions described below.
