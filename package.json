@@ -62,7 +62,8 @@
     "karma-htmlfile-reporter": "^0.3.4",
     "karma-coverage": "",
     "karma-remap-istanbul": "",
-    "protractor": "^4.0.9",
+	"protractor": "4.0.9",
+	"webdriver-manager": "10.2.5",
     "rimraf": "^2.5.4",
 
     "@types/core-js": "^0.9.34",
