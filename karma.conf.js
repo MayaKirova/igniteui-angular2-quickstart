@@ -18,15 +18,18 @@ module.exports = function(config) {
       require('karma-htmlfile-reporter') // crashing w/ strange socket error
     ],
 
-    customLaunchers: {
-      // From the CLI. Not used here but interesting
-      // chrome setup for travis CI using chromium
-      Chrome_travis_ci: {
-        base: 'Chrome',
-        flags: ['--no-sandbox']
-      }
-    },
     files: [
+		"http://code.jquery.com/jquery-1.12.4.js",
+        "http://code.jquery.com/ui/1.11.4/jquery-ui.min.js",
+        "http://cdn-na.infragistics.com/igniteui/latest/js/infragistics.core.js",
+        "http://cdn-na.infragistics.com/igniteui/latest/js/infragistics.lob.js",
+        "http://cdn-na.infragistics.com/igniteui/latest/js/infragistics.dv.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js",
+
+        // css files
+        "http://cdn-na.infragistics.com/igniteui/latest/css/themes/infragistics/infragistics.theme.css",
+        "http://cdn-na.infragistics.com/igniteui/latest/css/structure/infragistics.css",
+            
       // System.js for module loading
       'node_modules/systemjs/dist/system.src.js',
 
@@ -42,6 +45,7 @@ module.exports = function(config) {
       'node_modules/zone.js/dist/jasmine-patch.js',
       'node_modules/zone.js/dist/async-test.js',
       'node_modules/zone.js/dist/fake-async-test.js',
+      
 
       // RxJs
       { pattern: 'node_modules/rxjs/**/*.js', included: false, watched: false },
@@ -54,6 +58,7 @@ module.exports = function(config) {
 
       { pattern: 'systemjs.config.js', included: false, watched: false },
       { pattern: 'systemjs.config.extras.js', included: false, watched: false },
+      { pattern: 'node_modules/igniteui-angular2/**/*.js', included: false, watched: false },
       'karma-test-shim.js',
 
       // transpiled application & spec code paths loaded via module imports
@@ -93,10 +98,23 @@ module.exports = function(config) {
       pageTitle: 'Unit Tests',
       subPageTitle: __dirname
     },
-
+    customLaunchers: {
+      // From the CLI. Not used here but interesting
+      // chrome setup for travis CI using chromium
+      Chrome_travis_ci: {
+        base: 'Chrome',
+        flags: ['--no-sandbox', '--web-security=false']
+      },
+      PhantomJS_noSecurity: {
+        base: 'PhantomJS',
+        flags: [
+          '--ignore-ssl-errors=true'
+        ]
+      }
+    },
     port: 9876,
     colors: true,
-    logLevel: config.LOG_INFO,
+    //logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['Chrome'],
     singleRun: false

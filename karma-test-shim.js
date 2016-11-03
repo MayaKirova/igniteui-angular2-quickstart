@@ -1,6 +1,6 @@
 // #docregion
 // /*global jasmine, __karma__, window*/
-Error.stackTraceLimit = 0; // "No stacktrace"" is usually best for app testing.
+Error.stackTraceLimit = Infinity; // "No stacktrace"" is usually best for app testing.
 
 // Uncomment to get full stacktrace output. Sometimes helpful, usually not.
 // Error.stackTraceLimit = Infinity; //
@@ -31,7 +31,7 @@ System.config({
   baseURL: '/base',
   // Extend usual application package list with test folder
   packages: { 'testing': { main: 'index.js', defaultExtension: 'js' } },
-
+  defaultJSExtensions: true,
   // Assume npm: is set in `paths` in systemjs.config
   // Map the angular testing umd bundles
   map: {
@@ -76,8 +76,34 @@ function initTestBed(){
       browserTesting.BrowserDynamicTestingModule,
       browserTesting.platformBrowserDynamicTesting());
   })
+  .then(function() {
+  return Promise.all(
+    Object.keys(window.__karma__.files) // All files served by Karma.
+    .filter(onlySpecFiles)
+    .map(file2moduleName)
+    .map(function(path) {
+      return System.import(path).then(function(module) {
+        if (module.hasOwnProperty('main')) {
+          module.main();
+        } else {
+          throw new Error('Module ' + path + ' does not implement main() method.');
+        }
+      });
+    }));
+})
 }
+function onlySpecFiles(path) {
+  // check for individual files, if not given, always matches to all
+  var patternMatched = __karma__.config.files ?
+    path.match(new RegExp(__karma__.config.files)) : true;
 
+  return patternMatched && /[\.|_]spec\.js$/.test(path);
+}
+function file2moduleName(filePath) {
+  return filePath.replace(/\\/g, '/')
+    .replace(/^\/base\//, '')
+    .replace(/\.js/, '');
+}
 // Import all spec files and start karma
 function initTesting () {
   return Promise.all(
