@@ -17,5 +17,6 @@ import { IgGridComponent, IgTextEditorComponent, IgDateEditorComponent,
   IgPercentEditorComponent, IgDatePickerComponent, IgComboComponent,
   IgTreeComponent, IgDialogComponent, IgDataChartComponent],
   bootstrap: [ AppComponent ]
+
 })
 export class AppModule { }

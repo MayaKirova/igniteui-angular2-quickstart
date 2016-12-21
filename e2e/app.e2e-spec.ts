@@ -5,6 +5,7 @@ describe('QuickStart E2E Tests', function () {
   let expectedMsg = 'My IgniteUI Angular2 App';
 
 
+
   beforeEach(function () {
     browser.get('');
   });

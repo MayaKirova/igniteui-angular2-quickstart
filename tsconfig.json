@@ -6,12 +6,9 @@
     "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "removeComments": false,
+    "lib": [ "es2015", "dom" ],
     "noImplicitAny": false,
-    "suppressImplicitAnyIndexErrors": true,
-    "typeRoots": [
-      "./node_modules/@types/"
-    ]
+    "suppressImplicitAnyIndexErrors": true
   },
    "files": [
      "node_modules/igniteui-angular2/jquery.d.ts",

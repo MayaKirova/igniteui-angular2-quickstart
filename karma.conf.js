@@ -1,23 +1,23 @@
-// #docregion
 module.exports = function(config) {
 
-  var appBase    = 'app/';       // transpiled app JS and map files
-  var appSrcBase = 'app/';       // app source TS files
-  var appAssets  = '/base/app/'; // component assets fetched by Angular's compiler
+  var appBase    = 'app/';      // transpiled app JS and map files
+  var appSrcBase = 'app/';      // app source TS files
+  var appAssets  = 'base/app/'; // component assets fetched by Angular's compiler
 
-  var testBase    = 'testing/';       // transpiled test JS and map files
-  var testSrcBase = 'testing/';       // test source TS files
+  // Testing helpers (optional) are conventionally in a folder called `testing`
+  var testingBase    = 'testing/'; // transpiled test JS and map files
+  var testingSrcBase = 'testing/'; // test source TS files
 
   config.set({
     basePath: '',
     frameworks: ['jasmine'],
+
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
-      require('karma-jasmine-html-reporter'), // click "Debug" in browser to see it
-      require('karma-htmlfile-reporter') // crashing w/ strange socket error
+      require('karma-jasmine-html-reporter')
     ],
-
+  
     files: [
 		"http://code.jquery.com/jquery-1.12.4.js",
         "http://code.jquery.com/ui/1.11.4/jquery-ui.min.js",
@@ -63,7 +63,7 @@ module.exports = function(config) {
 
       // transpiled application & spec code paths loaded via module imports
       { pattern: appBase + '**/*.js', included: false, watched: true },
-      { pattern: testBase + '**/*.js', included: false, watched: true },
+      { pattern: testingBase + '**/*.js', included: false, watched: true },
 
 
       // Asset (HTML & CSS) paths loaded via Angular's component compiler
@@ -74,8 +74,8 @@ module.exports = function(config) {
       // Paths for debugging with source maps in dev tools
       { pattern: appSrcBase + '**/*.ts', included: false, watched: false },
       { pattern: appBase + '**/*.js.map', included: false, watched: false },
-      { pattern: testSrcBase + '**/*.ts', included: false, watched: false },
-      { pattern: testBase + '**/*.js.map', included: false, watched: false }
+      { pattern: testingSrcBase + '**/*.ts', included: false, watched: false },
+      { pattern: testingBase + '**/*.js.map', included: false, watched: false}
     ],
 
     // Proxied base paths for loading assets
@@ -112,6 +112,7 @@ module.exports = function(config) {
         ]
       }
     },
+    reporters: ['progress', 'kjhtml'],
     port: 9876,
     colors: true,
     //logLevel: config.LOG_INFO,

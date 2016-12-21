@@ -1,3 +1,49 @@
+## Angular Documentation QuickStart Changelog
+Upgraders: for a fresh start, consider running these commands 
+* `git clean -xdf` 
+* `npm install`
+
+<a name="0.2.21"></a>
+# 0.2.20 (2016-12-14)
+* Update to in-memory-web-api v.0.2.1
+
+<a name="0.2.20"></a>
+# 0.2.20 (2016-12-07)
+* Update to Angular 2.3.0
+
+<a name="0.2.19"></a>
+# 0.2.19 (2016-11-30)
+* remove upgrade mappings from `systemjs.config.js` PR #301
+
+<a name="0.2.18"></a>
+# 0.2.18 (2016-11-30)
+* remove `exclude` clause from `tsconfig.json`; it was just confusing people
+* karma.config + karma-test-shim can handle multiple spec source paths (issue #294)
+* cosmetic `app.component.spec.ts` changes
+* cosmetic `karma.config.js` changes
+
+<a name="0.2.17"></a>
+# 0.2.17 (2016-11-16)
+* Conform to updated QuickStart advice
+  * removed docker everywhere (was nice but not necessary)
+  * removed wallaby
+  * shrink styles.css
+  * refine tsconfig.json
+  * `AppComponent` uses interpolation
+
+<a name="0.2.16"></a>
+# 0.2.16 (2016-11-14)
+* Update to Angular 2.2.0
+
+<a name="0.2.15"></a>
+# 0.2.15 (2016-10-29)
+* Revert to Jasmine 2.4.1 because bug in 2.5.x (see [jasmine issue #1231](https://github.com/jasmine/jasmine/issues/1231))
+
+<a name="0.2.14"></a>
+# 0.2.14 (2016-10-29)
+* Remove bootstrap.css install
+* Angular v2.1.2
+
 <a name="0.2.13"></a>
 # 0.2.13 (2016-10-20)
 * Protractor 4
