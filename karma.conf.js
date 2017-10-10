@@ -74,7 +74,7 @@ module.exports = function(config) {
       'karma-test-shim.js', // optionally extend SystemJS mapping e.g., with barrels
 
       // transpiled application & spec code paths loaded via module imports
-      { pattern: appBase + '**/*.js', included: false, watched: true },
+       { pattern: appBase + '**/*.js', included: false, watched: true },
       { pattern: testingBase + '**/*.js', included: false, watched: true },
 
 
