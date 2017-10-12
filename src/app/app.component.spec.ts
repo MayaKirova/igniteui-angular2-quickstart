@@ -6,33 +6,33 @@ import { DebugElement } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { IgGridComponent, IgTextEditorComponent, IgDateEditorComponent,
-	IgMaskEditorComponent, IgCurrencyEditorComponent, IgNumericEditorComponent,
-	IgPercentEditorComponent, IgDatePickerComponent, IgComboComponent,
-	IgTreeComponent, IgDialogComponent, IgDataChartComponent
+    IgMaskEditorComponent, IgCurrencyEditorComponent, IgNumericEditorComponent,
+    IgPercentEditorComponent, IgDatePickerComponent, IgComboComponent,
+    IgTreeComponent, IgDialogComponent, IgDataChartComponent
 } from 'igniteui-angular2';
 
 describe('AppComponent', function () {
-	let de: DebugElement;
-	let comp: AppComponent;
-	let fixture: ComponentFixture<AppComponent>;
+    let de: DebugElement;
+    let comp: AppComponent;
+    let fixture: ComponentFixture<AppComponent>;
 
-	beforeEach(async(() => {
-		TestBed.configureTestingModule({
-		imports: [ BrowserModule , FormsModule ],
-		declarations: [ AppComponent, IgGridComponent, IgTextEditorComponent, IgDateEditorComponent,
-			IgMaskEditorComponent, IgCurrencyEditorComponent, IgNumericEditorComponent,
-			IgPercentEditorComponent, IgDatePickerComponent, IgComboComponent,
-			IgTreeComponent, IgDialogComponent, IgDataChartComponent ]
-		})
-		.compileComponents();
-	}));
+    beforeEach(async(() => {
+        TestBed.configureTestingModule({
+        imports: [ BrowserModule , FormsModule ],
+        declarations: [ AppComponent, IgGridComponent, IgTextEditorComponent, IgDateEditorComponent,
+            IgMaskEditorComponent, IgCurrencyEditorComponent, IgNumericEditorComponent,
+            IgPercentEditorComponent, IgDatePickerComponent, IgComboComponent,
+            IgTreeComponent, IgDialogComponent, IgDataChartComponent ]
+        })
+        .compileComponents();
+    }));
 
-	beforeEach(() => {
-		fixture = TestBed.createComponent(AppComponent);
-		comp = fixture.componentInstance;
-		de = fixture.debugElement.query(By.css('h1'));
-	});
+    beforeEach(() => {
+        fixture = TestBed.createComponent(AppComponent);
+        comp = fixture.componentInstance;
+        de = fixture.debugElement.query(By.css('h1'));
+    });
 
-	it('should create component', () => expect(comp).toBeDefined() );
+    it('should create component', () => expect(comp).toBeDefined() );
 
 });
