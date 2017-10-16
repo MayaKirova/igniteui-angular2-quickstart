@@ -149,4 +149,4 @@ export class AppComponent {
                 { 'CountryName': 'Brazil', 'Pop1995': 161, 'Pop2005': 186, 'Pop2015': 204, 'Pop2025': 218 }
                 ];
     }
- }
+}
